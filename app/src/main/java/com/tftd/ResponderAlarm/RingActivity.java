@@ -72,8 +72,10 @@ public class RingActivity extends Activity {
         String music_string;
         if(music.equals("1")){
             music_string = "ringtone.mp3";
+        }else if (music.equals("2")){
+            music_string = "aces-fire.mp3";
         }else{
-            music_string = "ACES.mp3";
+            music_string = "aces-medical.mp3";
         }
         AudioManager am =
                 (AudioManager) getSystemService(Context.AUDIO_SERVICE);

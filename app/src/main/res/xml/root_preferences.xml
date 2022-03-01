@@ -16,7 +16,8 @@
         app:icon="@drawable/ic_baseline_map_24">
         <SwitchPreferenceCompat
             app:key="map"
-            app:title="For use when ACES is unavailable" />
+            app:title="For use when ACES is unavailable"
+            app:defaultValue="true" />
     </PreferenceCategory>
 
     <PreferenceCategory app:title="Alarm Sound"

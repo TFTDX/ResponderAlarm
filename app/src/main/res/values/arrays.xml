@@ -12,7 +12,8 @@
 
     <string-array name="music_name">
         <item>Alarm</item>
-        <item>ACES Coding</item>
+        <item>ACES Fire Coding</item>
+        <item>ACES Medical Coding</item>
     </string-array>
 
     <string-array name="music_values">
