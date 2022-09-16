@@ -12,11 +12,12 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="Open Navigation Maps"
+    <PreferenceCategory app:title="Navigation Maps"
         app:icon="@drawable/ic_baseline_map_24">
         <SwitchPreferenceCompat
             app:key="map"
-            app:title="For use when ACES is unavailable"
+            app:title="Toggle to activate Maps"
+            app:summary="Responders are to ensure and verify the incident location is accurate before proceeding."
             app:defaultValue="true" />
     </PreferenceCategory>
 
