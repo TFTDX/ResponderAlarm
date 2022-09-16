@@ -70,9 +70,7 @@ public class RingActivity extends Activity {
 //        Toast.makeText(this, map + "", Toast.LENGTH_SHORT).show();
         String music = ((SharedPreferences) sp).getString("music", "1");
         String music_string;
-        if(music.equals("1")){
-            music_string = "ringtone.mp3";
-        }else if (music.equals("2")){
+         if (music.equals("1")){
             music_string = "aces-fire.mp3";
         }else{
             music_string = "aces-medical.mp3";
