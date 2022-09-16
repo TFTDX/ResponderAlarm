@@ -34,7 +34,7 @@
     <Preference app:title="Report Bugs"
         app:icon="@drawable/ic_baseline_bug_report_24">
         <intent android:action="android.intent.action.VIEW"
-            android:data="https://form.gov.sg/617b72f6b2e18e001303a489" />
+            android:data="https://form.gov.sg/62f30a8f7be87f001105746d" />
     </Preference>
 
     <!--    <PreferenceCategory app:title="@string/messages_header">-->
