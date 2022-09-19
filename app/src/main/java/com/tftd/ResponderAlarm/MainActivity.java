@@ -9,15 +9,19 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.provider.Settings;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -33,9 +37,22 @@ public class MainActivity extends AppCompatActivity {
     private final static int SEND_SMS_PERMISSION_REQ=1;
     NavController navController;
     AppBarConfiguration appBarConfiguration;
+    final String PREFS_NAME = "MyPrefsFile";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        if (settings.getBoolean("firstStart", true)) {
+            //the app is being launched for first time, do something
+            Log.d("Comments", "First time app launch");
+
+            showFirstRingtoneSelection();
+
+            settings.edit().putBoolean("firstStart", false).commit();
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        e1=findViewById(R.id.editText);
@@ -97,4 +114,26 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    //Prompts user on first time app launch
+    private void showFirstRingtoneSelection() {
+        new AlertDialog.Builder(this)
+                .setTitle("Set Desired Alarm")
+                .setMessage("Select either Firefighter or Medical Alarm  on the settings page")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create().show();
+
+
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean("firstStart", false);
+        editor.apply();
+    }
+
 }
