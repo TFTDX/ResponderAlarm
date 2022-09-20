@@ -24,17 +24,18 @@
     <PreferenceCategory app:title="Alarm Sound"
         app:icon="@drawable/ic_baseline_music_note_24">
         <ListPreference
-            android:key="music"
+            android:defaultValue="1"
             android:entries="@array/music_name"
             android:entryValues="@array/music_values"
-            android:title="Select music for your notification alarm"
-            android:defaultValue="1"
-            />
+            android:key="music"
+            android:title="Select alarm type" />
     </PreferenceCategory>
 
-    <Preference app:title="Report Bugs"
-        app:icon="@drawable/ic_baseline_bug_report_24">
-        <intent android:action="android.intent.action.VIEW"
+    <Preference
+        app:icon="@drawable/ic_baseline_rate_review_24"
+        app:title="Submit feedback">
+        <intent
+            android:action="android.intent.action.VIEW"
             android:data="https://form.gov.sg/62f30a8f7be87f001105746d" />
     </Preference>
 

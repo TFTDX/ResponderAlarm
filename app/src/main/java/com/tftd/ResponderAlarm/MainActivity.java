@@ -43,14 +43,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        //First time launch
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         if (settings.getBoolean("firstStart", true)) {
-            //the app is being launched for first time, do something
+            //App is being launched first time
             Log.d("Comments", "First time app launch");
 
             showFirstRingtoneSelection();
 
             settings.edit().putBoolean("firstStart", false).commit();
+            //App is now no longer qualified for first time launch
         }
 
         super.onCreate(savedInstanceState);
