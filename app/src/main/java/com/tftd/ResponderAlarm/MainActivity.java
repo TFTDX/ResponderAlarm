@@ -118,10 +118,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Prompts user on first time app launch
-    private void showFirstRingtoneSelection() {
+    private void showFirstRingtoneSelection()
+    {
         new AlertDialog.Builder(this)
                 .setTitle("Set Desired Alarm")
-                .setMessage("Select either Firefighter or Medical Alarm  on the settings page")
+                .setMessage("Select either Fire or Medical Coding alarm on the settings page")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -129,8 +130,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .create().show();
-
-
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();

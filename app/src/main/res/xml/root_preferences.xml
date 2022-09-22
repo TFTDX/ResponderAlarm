@@ -31,13 +31,16 @@
             android:title="Select alarm type" />
     </PreferenceCategory>
 
-    <Preference
-        app:icon="@drawable/ic_baseline_rate_review_24"
+    <PreferenceCategory app:title="Others"
+        app:icon="@drawable/ic_baseline_more_24">
+        <Preference
+            app:icon="@drawable/ic_baseline_rate_review_24"
         app:title="Submit feedback">
-        <intent
-            android:action="android.intent.action.VIEW"
-            android:data="https://form.gov.sg/62f30a8f7be87f001105746d" />
-    </Preference>
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://form.gov.sg/62f30a8f7be87f001105746d" />
+        </Preference>
+    </PreferenceCategory>
 
     <!--    <PreferenceCategory app:title="@string/messages_header">-->
 <!--        <EditTextPreference-->
